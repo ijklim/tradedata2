@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'StockController@index');
+
+Route::resource('stock', StockController::class);
+Route::resource('data-source', DataSourceController::class);
+
+// Api that returns json
+Route::get('/stock-price/{stock}', 'StockPriceController@show');
