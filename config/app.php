@@ -14,6 +14,7 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'version' => '2.0.0',
 
     /*
     |--------------------------------------------------------------------------
@@ -150,6 +151,7 @@ return [
         /*
          * Package Service Providers...
          */
+        Collective\Html\HtmlServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -159,6 +161,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\BladeServiceProvider::class,
 
     ],
 
@@ -209,6 +212,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
     ],
 
 ];
